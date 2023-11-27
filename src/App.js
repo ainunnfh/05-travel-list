@@ -1,10 +1,12 @@
 export default function App() {
-  <>
-    <Logo />
-    <Form />
-    <PackingList />
-    <Stats />
-  </>;
+  return (
+    <div className="app">
+      <Logo />
+      <Form />
+      <PackingList />
+      <Stats />
+    </div>
+  );
 }
 
 function Logo() {
@@ -22,7 +24,7 @@ function PackingList() {
 }
 function Stats() {
   return (
-    <footer>
+    <footer className="stats">
       <em>💼You have X items on your list, and you already packed X (%)</em>
     </footer>
   );
