@@ -39,7 +39,6 @@ function PackingList() {
 }
 
 function Item({ propsName }) {
-  console.log(propsName.packed);
   return (
     <div>
       <li>
