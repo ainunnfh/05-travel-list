@@ -31,23 +31,31 @@ function PackingList() {
     <div className="list">
       <ul>
         {initialItems.map((i) => (
-          <Item item={i} />
+          <Item propsName={i} />
         ))}
       </ul>
     </div>
   );
 }
 
-function Item({ item }) {
+function Item({ propsName }) {
+  console.log(propsName.packed);
   return (
-    <li>
-      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
-        {item.quantity} {item.description}
-      </span>
-      <button>❌</button>
-    </li>
+    <div>
+      <li>
+        <span
+          style={
+            propsName.packed === true ? { textDecoration: "line-through" } : {}
+          }
+        >
+          {propsName.quantity} {propsName.description}
+        </span>
+        <button>❌</button>
+      </li>
+    </div>
   );
 }
+
 function Stats() {
   return (
     <footer className="stats">
