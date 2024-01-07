@@ -36,7 +36,6 @@ function Form({ onAddItems }) {
 
     const newItem = { description, quantity, packed: false, id: Math.random() };
 
-    console.log(newItem);
     onAddItems(newItem);
     setDescription("");
     setQuantity(1);
