@@ -6,11 +6,16 @@ export default function App() {
   function handleAddItem(item) {
     setItems((items) => [...items, item]);
   }
+
+  function handleDelete(id) {
+    setItems((items) => items.filter((item) => item.id !== id));
+  }
+
   return (
     <div className="app">
       <Logo />
       <Form onAddItems={handleAddItem} />
-      <PackingList items={items} />
+      <PackingList items={items} onDeleteItem={handleDelete} />
       <Stats />
     </div>
   );
@@ -54,19 +59,19 @@ function Form({ onAddItems }) {
     </form>
   );
 }
-function PackingList({ items }) {
+function PackingList({ items, onDeleteItem }) {
   return (
     <div className="list">
       <ul>
         {items.map((i) => (
-          <Item propsName={i} key={i.id} />
+          <Item propsName={i} key={i.id} onDeleteItem={onDeleteItem} />
         ))}
       </ul>
     </div>
   );
 }
 
-function Item({ propsName }) {
+function Item({ propsName, onDeleteItem }) {
   return (
     <div>
       <li>
@@ -77,7 +82,7 @@ function Item({ propsName }) {
         >
           {propsName.quantity} {propsName.description}
         </span>
-        <button>❌</button>
+        <button onClick={() => onDeleteItem(propsName.id)}>❌</button>
       </li>
     </div>
   );
