@@ -150,7 +150,7 @@ function Stats({ items }) {
         {percentange === 100
           ? "You got everything! Ready to go✈"
           : ` 💼You have ${itemLength} items on your list, and you already packed
-        ${itemPacked} (${percentange}%)`}
+        ${itemPacked} (${percentange}%)` ? 'Start Adding some items to your packing list🚀' :''}
       </em>
     </footer>
   );
