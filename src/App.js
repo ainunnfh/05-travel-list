@@ -78,7 +78,6 @@ function Form({ onAddItems }) {
 }
 function PackingList({ items, onDeleteItem, onToggleItem, onClearList }) {
   const [sortBy, setSortBy] = useState("input");
-  console.log(sortBy);
 
   // derived state
   let sortedItems = items;
